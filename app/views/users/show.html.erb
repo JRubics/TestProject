@@ -24,16 +24,21 @@
     <%= image_tag @user.image.url %><br/>
 <% end %>
 
+<h4>
+POSTS
+</h4>
 <ul>
   <% @user.posts.each do |post| %>
     <li><%= post.title %> <%= post.body %> 
     <% if logged_in? && current_user == post.user%>
-      <%= link_to 'Edit', edit_post_path(post) %></li>
+      <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Delete', post_path(post), method: 'delete' %></li>
     <%end%>
   <% end %>
 </ul>
 <%= link_to 'AddPost', new_post_path(user_id: @user.id)%> |
 
+<% if logged_in? && current_user == @user.posts.first.user%>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<%end%>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Users', users_path %>

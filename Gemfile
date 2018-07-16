@@ -57,7 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sorcery'
 
 gem "paperclip"
-
+gem 'jquery-rails'
+#markdown
+gem redcarpet
 
 gem 'factory_bot_rails'
 group :development, :test do
