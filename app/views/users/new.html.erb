@@ -37,13 +37,13 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
-  <p>
+  <!--p>
     <% if @user.image.exists? %>
       <%= image_tag @user.image.url %><br/>
     <% end %>    
     <%= form.label :image, "Attach a New Image" %><br />
     <%= form.file_field :image %>
-  </p>
+  </p-->
 
   <div class="actions">
     <%= form.submit %>
