@@ -29,9 +29,9 @@ POSTS
 </h4>
 <ul>
   <% @user.posts.each do |post| %>
-    <li><%= post.title %> <%= post.body %> 
+    <li><%= post.title %>
     <% if logged_in? && current_user == post.user%>
-      <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Delete', post_path(post), method: 'delete' %></li>
+      <%= link_to 'Show', post_path(post) %> <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Delete', post_path(post), method: 'delete' %></li>
     <%end%>
   <% end %>
 </ul>

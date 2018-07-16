@@ -59,7 +59,7 @@ gem 'sorcery'
 gem "paperclip"
 gem 'jquery-rails'
 #markdown
-gem redcarpet
+gem 'redcarpet'
 
 gem 'factory_bot_rails'
 group :development, :test do
