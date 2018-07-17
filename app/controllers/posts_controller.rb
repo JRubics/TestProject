@@ -4,6 +4,15 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search_title(params[:search]).order("created_at DESC")
+      if @posts.present?
+        return
+      end
+      @posts = Post.search_body(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   def show

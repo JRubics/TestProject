@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users
   resources :posts
+  resources :comments
   resources :user_sessions, only: [ :new, :create, :destroy ]
   # root to: 'users#index'
   get 'login'  => 'user_sessions#new'

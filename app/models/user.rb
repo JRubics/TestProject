@@ -6,5 +6,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   
   has_many :posts
+  has_many :comments
   # uniqueness case_sensitive: false, model: User, attribute: 'email'
 end

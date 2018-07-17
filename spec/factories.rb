@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :comment do
+    
+  end
   factory :post do
     
   end
